@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+
+        font-style: normal;
+        font-variation-settings: "slnt" 0;
+      }
+
+      header {
+        position: sticky;
+        inset-inline: 0;
+        top: 0;
+        height: 60px;
+        padding: 0 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+        z-index: 10;
+      }
+
+      header div {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      header div button {
+        all: unset;
+        text-decoration: underline;
+        font-size: 14px;
+        display: flex;
+        gap: 8px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      .container .hero-grid {
+        margin-bottom: 40px;
+        margin-top: 16px;
+      }
+      .container .hero-grid p {
+        font-size: 22px;
+        font-weight: 500;
+        color: #222222;
+        margin-bottom: 28px;
+      }
+
+      .container .hero-grid .grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        place-items: stretch;
+        gap: 8px;
+      }
+
+      .container .hero-grid .grid .item {
+        display: grid;
+        grid-template-rows: 1fr auto;
+
+      }
+
+      .container .hero-grid .grid .item span {
+        font-size: 14px;
+        color: #222222;
+        font-weight: 300;
+        margin-top: 8px;
+        margin-bottom: 4px;
+
+      }
+
+      .container .box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 1rem;
+      }
+
+      .container .box .title {
+        font-size: 22px;
+        font-weight: 500;
+        color: #222222;
+        position: sticky;
+        top: 120px;
+        padding-bottom: 112px;
+      }
+
+      .container .box .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .container .box .grid img:first-child {
+        grid-column: span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+        role="presentation"
+        focusable="false"
+        style="
+          display: block;
+          fill: none;
+          height: 16px;
+          width: 16px;
+          stroke: currentcolor;
+          stroke-width: 4;
+          overflow: visible;
+        "
+      >
+        <path fill="none" d="M20 28 8.7 16.7a1 1 0 0 1 0-1.4L20 4"></path>
+      </svg>
+
+      <div>
+        <button>
+          <svg
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            role="presentation"
+            focusable="false"
+            style="
+              display: block;
+              fill: none;
+              height: 16px;
+              width: 16px;
+              stroke: currentcolor;
+              stroke-width: 2;
+              overflow: visible;
+            "
+          >
+            <path
+              d="m27 18v9c0 1.1046-.8954 2-2 2h-18c-1.10457 0-2-.8954-2-2v-9m11-15v21m-10-11 9.2929-9.29289c.3905-.39053 1.0237-.39053 1.4142 0l9.2929 9.29289"
+              fill="none"
+            ></path>
+          </svg>
+          Share
+        </button>
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+            role="presentation"
+            focusable="false"
+            style="
+              display: block;
+              fill: none;
+              height: 16px;
+              width: 16px;
+              stroke: currentcolor;
+              stroke-width: 2;
+              overflow: visible;
+            "
+          >
+            <path
+              d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"
+            ></path>
+          </svg>
+          Save
+        </button>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="hero-grid">
+        <p>Photo tour</p>
+        <div class="grid">
+          <div class="item">
+            <img
+              src="https://picsum.photos/146/96?grayscale&random=100"
+              width="146"
+              height="96"
+            />
+            <span>Shared full kitchen</span>
+          </div>
+          <div class="item">
+            <img
+              src="https://picsum.photos/146/96?grayscale&random=101"
+              width="146"
+              height="96"
+            />
+            <span>Bedroom</span>
+          </div>
+          <div class="item">
+            <img
+              src="https://picsum.photos/146/96?grayscale&random=102"
+              width="146"
+              height="96"
+            />
+            <span>Shared full bathroom 1</span>
+          </div>
+          <div class="item">
+            <img
+              src="https://picsum.photos/146/96?grayscale&random=103"
+              width="146"
+              height="96"
+            />
+            <span>Shared full bathroom 2</span>
+          </div>
+          <div class="item">
+            <img
+              src="https://picsum.photos/146/96?grayscale&random=103"
+              width="146"
+              height="96"
+            />
+            <span>Shared full bathroom 2</span>
+          </div>
+          <div class="item">
+            <img
+              src="https://picsum.photos/146/96?grayscale&random=103"
+              width="146"
+              height="96"
+            />
+            <span>Shared WC</span>
+          </div>
+          <div class="item">
+            <img
+              src="https://picsum.photos/146/96?grayscale&random=103"
+              width="146"
+              height="96"
+            />
+            <span>Shared laundry area</span>
+          </div>
+          <div class="item">
+            <img
+              src="https://picsum.photos/146/96?grayscale&random=103"
+              width="146"
+              height="96"
+            />
+            <span>Shared outdoor space</span>
+          </div>
+          <div class="item">
+            <img
+              src="https://picsum.photos/146/96?grayscale&random=103"
+              width="146"
+              height="96"
+            />
+            <span>Additional photos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div>
+          <p class="title">Shared full kitchen</p>
+        </div>
+        <div class="grid">
+          <img
+            src="https://picsum.photos/741/496?grayscale&random=1"
+            width="741"
+            height="496"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=2"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=3"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=4"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=5"
+            width="366"
+            height="245"
+          />
+        </div>
+      </div>
+
+      <div class="box">
+        <div>
+          <p class="title">Bedroom</p>
+        </div>
+        <div class="grid">
+          <img
+            src="https://picsum.photos/741/496?grayscale&random=10"
+            width="741"
+            height="496"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=6"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=7"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=8"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=9"
+            width="366"
+            height="245"
+          />
+        </div>
+      </div>
+
+      <div class="box">
+        <div>
+          <p class="title">Shared full bathroom 1</p>
+        </div>
+        <div class="grid">
+          <img
+            src="https://picsum.photos/741/496?grayscale&random=11"
+            width="741"
+            height="496"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=12"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=13"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=14"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=15"
+            width="366"
+            height="245"
+          />
+        </div>
+      </div>
+
+      <div class="box">
+        <div>
+          <p class="title">Shared full bathroom 2</p>
+        </div>
+        <div class="grid">
+          <img
+            src="https://picsum.photos/741/496?grayscale&random=16"
+            width="741"
+            height="496"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=21"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=31"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=41"
+            width="366"
+            height="245"
+          />
+          <img
+            src="https://picsum.photos/366/245?grayscale&random=51"
+            width="366"
+            height="245"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
